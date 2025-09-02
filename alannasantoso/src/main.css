@@ -4,8 +4,8 @@
 
 :root {
   line-height: 1.5;
-  font-weight: 400;
-
+  font-weight: 250;
+  font-family: "DM Sans";
   color-scheme: light dark;
   color: white;
   background-color: #171A1C;
