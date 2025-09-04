@@ -21,7 +21,6 @@ const photoVariants = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 250, damping: 40 },
   },
 };
 
@@ -44,6 +43,7 @@ export default function About() {
             <motion.div
               key={index}
               variants={photoVariants}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               className="w-full h-full opacity-60 rounded-md overflow-hidden min-h-0"
             >
               <img
