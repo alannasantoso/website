@@ -1,7 +1,4 @@
 import Header from '../components/Header'
-import photo1 from '../assets/about/1.jpg'
-import photo2 from '../assets/about/2.jpg'
-import photo3 from '../assets/about/3.jpg'
 import { useEffect } from 'react'
 
 export default function About() {
