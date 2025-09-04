@@ -9,8 +9,8 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.7,
+      staggerChildren: 0.2,
+      delayChildren: 0.5,
     },
   },
 };
@@ -30,11 +30,11 @@ export default function About() {
   }, []);
 
   return (
-    <main className="container mx-auto">
-      <div className="min-h-screen mx-auto w-screen md:min-w-[800px] md:w-[50%]">
+    <main className="container mx-auto flex-grow">
+      <div className="min-h-screen mx-auto w-screen md:min-w-[800px] md:w-[50%] justify-center items-center">
         <Header />
         <motion.div
-          className="w-full aspect-[2/1] pl-10 pr-10 pt-10 md:pl-20 md:pr-20 md:pt-20 pb-0 grid grid-cols-3 gap-5 min-h-0"
+          className="w-full aspect-[2/1] pl-10 pr-10 md:pl-20 md:pr-20 pb-0 pt-10 md:pt-25 grid grid-cols-3 gap-5 min-h-0"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -53,12 +53,14 @@ export default function About() {
               />
             </motion.div>
           ))}
-          <p className="col-span-3 text-light text-[10px] pt-0 italic text-right">
-            caption: shots from alanna&apos;s recents
-          </p>
+
         </motion.div>
+        
 
         <div className="mb-30 w-full pt-0 pl-10 pr-10 md:pl-20 md:pr-20">
+                    <p className="col-span-3 text-light text-[10px] pt-5 italic text-right">
+            caption: shots from alanna&apos;s recents
+          </p>
           <p className="text-3xl font-[dm_sans]">about alanna:</p>
           <p className="mt-5 text-sm text-justify">
             alanna is a typically talkative mildly energetic 19 (almost 20) year old with aspirations of one day being

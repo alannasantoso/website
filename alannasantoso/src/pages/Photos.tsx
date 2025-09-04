@@ -19,7 +19,7 @@ export default function Photos() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow">
+      <main className="container mx-auto flex-grow">
         <div className="min-h-screen mx-auto w-screen md:min-w-[800px] md:w-[50%] pt-12 pl-10 md:pl-20 pr-10 md:pr-20 mb-30">
             <p className="text-3xl font-[dm_sans]">camera roll:</p>
             <p className="mt-5">this page is a collection of some of alanna's favourite photos from
