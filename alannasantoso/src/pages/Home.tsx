@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 export default function Home() {
   useEffect(() => {
-    document.title = 'Home — Alanna Santoso'
+    document.title = 'home | alannasantoso'
   }, [])
 
   return (
@@ -16,7 +16,7 @@ export default function Home() {
             <p className="mt-[50px]">
             welcome! i'm a second year computer science and finance student at the university of auckland. this page was created as a personal project and a creative exercise - feel free to have a look around!
             </p>
-            <p className="text-sm mt-[50px] italic">created with three cups of hojicha and a passion for easter eggs</p>
+            <p className="text-sm mt-[50px] italic">made with three cups of hojicha and a passion for easter eggs</p>
           </div>
           <div className="font-[dm_sans] font-normal flex flex-col items-end text-right space-y-2 mt-[10%]">
             <Link to="/about" className="hover:italic block">&gt; About</Link>
