@@ -7,9 +7,9 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="container w-[100vw] mx-auto p-0 flex flex-col justify-center align-middle">
-      <div className="h-screen mx-auto w-screen  md:min-w-[700px] md:w-[50%]">
-        <div className="w-full h-[500px] mt-[20%] p-20 grid grid-cols-1 md:grid-cols-2">
+    <main className="container w-[100vw] mx-auto p-0 flex flex-col items-center align-middle">
+      <div className="h-screen mx-auto w-screen flex md:min-w-[700px] md:w-[50%] justify-center items-center align-middle">
+        <div className="w-full p-20 grid grid-cols-1 md:grid-cols-2">
           <div>          
             <h1 className="text-6xl italic font-[hanken_grotesk]">alanna</h1>
             <h1 className="text-6xl mt-[-20px] font-[hanken_grotesk]">santoso</h1>
