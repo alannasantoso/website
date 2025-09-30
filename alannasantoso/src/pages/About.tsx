@@ -73,8 +73,10 @@ export default function About() {
             <br />
             in her spare time, alanna can be found dabbling in design, photography, and a good dose of granny hobbies
             (baking, crochet, fountain pens & reading agatha christie). she is constantly spending too much money on books that will collect dust for months
-            before they're read - but there's somehow always time to dive into historical papers and serial killer backstories on the internet! 
+            before they're read - but there's somehow always time to dive into historical papers and serial killer backstories on the internet! even when she's dashing 
+            to her next meeting or coffee catchup, she's always happy to stop for a yap: ask her literally anything and it'll spiral into an hour long yap. 
             <br/>
+            
           </p>
         </div>
       </div>
