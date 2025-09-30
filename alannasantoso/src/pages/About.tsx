@@ -63,18 +63,22 @@ export default function About() {
           </p>
           <p className="text-3xl font-[dm_sans]">about alanna:</p>
           <p className="mt-5 text-sm text-justify">
-            alanna is a typically talkative mildly energetic 19 (almost 20) year old with aspirations of one day being
+            alanna is a talkative, mildly energetic 19 (almost 20) year old with aspirations of one day being
             able to visit all of the top ten largest museums.<br /> <br />
             usually fuelled by caffeine she <em>swears</em> is a placebo, you're most likely to find her running around
-            campus (late for that business lecture <em>again!?</em>) or taking a much-needed nap on bus number 70. the
-            amount of flavoured leaf and bean liquids she downs suggest she may be allergic to water, but the number of
-            emergency pumps she's had to get on account of forgotten water bottles suggest otherwise.
+            campus (late for that business lecture <em>again!?</em>) or taking a much-needed power nap on bus number 70. the
+            amount of flavoured leaf and bean liquids she downs suggest she may be allergic to water, but fear not! there is always
+            an emergency water bottle in the backseat of her car (i guess you could say there's aqua in her aqua).
             <br />
             <br />
             in her spare time, alanna can be found dabbling in design, photography, and a good dose of granny hobbies
-            (baking, crochet, reading agatha christie). her spotify dependency has seen the creation of nearly 250
-            playlists, and her extremely opinionated, yet rarely updated, letterboxd account tells you all you need to
-            know.
+            (baking, crochet, reading agatha christie). her obsession with soundtracking her life has 
+            seen the creation of over 300 playlists,
+            all meticulously stored in nested spotify folders for archival purposes - and you can be sure that between the 7000 artists she's listened to, 
+            there is most <em>definitely</em> a song for every mood. correlated with her tendency to romanticise life as much as possible (a necessity
+            when you're a woman in cs), she is an avid movie and tv show watcher, with <em>extremely</em> passionate opinions on certain unrealistic storylines
+            (don't ask her about the notebook). 
+            <br/>
           </p>
         </div>
       </div>
