@@ -5,6 +5,7 @@ import About from './pages/About'
 import Photos from './pages/Photos'
 import Projects from './pages/Projects'
 import Links from './pages/Links'
+import Photobooth from './pages/Photobooth'
 import './main.css'
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
             <Route path="/photos" element={<Photos />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/links" element={<Links />}/>
+            <Route path="/photobooth" element={<Photobooth />}/>
           </Routes>
         </div>
       </div>

@@ -1,5 +1,6 @@
+// backend/src/routes/photos.ts
 import { Router } from "express";
-import * as Photo from "../models/Photo";
+import Photo from "../models/Photo"; // Mongoose model
 
 const cloudinary = require("../config/cloudinary");
 const router = Router();
@@ -7,7 +8,6 @@ const router = Router();
 router.post("/", async (req, res) => {
   try {
     const { image, caption, filter } = req.body;
-
     if (!image) return res.status(400).json({ error: "Image required" });
 
     const upload = await cloudinary.uploader.upload(image, {
@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
     });
 
     const photo = await Photo.create({
-url: upload.secure_url,
+      url: upload.secure_url,
       caption,
       filter,
     });
