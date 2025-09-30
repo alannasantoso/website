@@ -72,12 +72,8 @@ export default function About() {
             <br />
             <br />
             in her spare time, alanna can be found dabbling in design, photography, and a good dose of granny hobbies
-            (baking, crochet, reading agatha christie). her obsession with soundtracking her life has 
-            seen the creation of over 300 playlists,
-            all meticulously stored in nested spotify folders for archival purposes - and you can be sure that between the 7000 artists she's listened to, 
-            there is most <em>definitely</em> a song for every mood. correlated with her tendency to romanticise life as much as possible (a necessity
-            when you're a woman in cs), she is an avid movie and tv show watcher, with <em>extremely</em> passionate opinions on certain unrealistic storylines
-            (don't ask her about the notebook). 
+            (baking, crochet, fountain pens & reading agatha christie). she is constantly spending too much money on books that will collect dust for months
+            before they're read - but there's somehow always time to dive into historical papers and serial killer backstories on the internet! 
             <br/>
           </p>
         </div>
