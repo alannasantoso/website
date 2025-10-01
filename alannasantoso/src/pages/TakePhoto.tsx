@@ -48,25 +48,44 @@ export default function TakePhoto() {
     setCapturedImage(canvasRef.current.toDataURL("image/jpeg"));
   };
 
-  const handleUpload = async () => {
-    if (!capturedImage) return;
+const handleUpload = async () => {
+  if (!capturedImage) return;
+
+  try {
+    const res = await fetch("/api/photos", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ image: capturedImage, caption, filter }),
+    });
+
+    // Read body once, handle JSON or fallback to text
+    let data;
+    const raw = await res.text(); // read body once
     try {
-      const res = await fetch("/api/photos", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ image: capturedImage, caption, filter }),
-      });
-      if (!res.ok) throw new Error("Upload failed");
-      alert("Photo uploaded!");
-      setCapturedImage(null);
-      setCaption("");
-      setFilter("none");
-      navigate("/photobooth");
-    } catch (err) {
-      console.error(err);
-      alert("Upload failed");
+      data = JSON.parse(raw);
+    } catch {
+      console.error("Server response was not JSON:", raw);
+      throw new Error("Upload failed: server returned invalid response");
     }
-  };
+
+    if (!res.ok) {
+      throw new Error(data?.error || "Upload failed");
+    }
+
+    // Success
+    alert("Photo uploaded!");
+    setCapturedImage(null);
+    setCaption("");
+    setFilter("none");
+    navigate("/photobooth");
+
+  } catch (err) {
+    console.error(err);
+    alert(err instanceof Error ? err.message : "Upload failed");
+  }
+};
+
+
 
   return (
     <div className="flex flex-col min-h-screen">
