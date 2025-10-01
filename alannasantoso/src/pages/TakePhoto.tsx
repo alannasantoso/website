@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "../components/Header.js";
 
 const FilterSelect = ({ filter, setFilter }: { filter: string; setFilter: (f: string) => void }) => {
   const filters = ["none", "grayscale(100%)", "warm(100%)"];

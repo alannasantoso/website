@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
-import Header from "../components/Header";
+import Header from "../components/Header.js";
 
 const GalleryItem = ({ url, caption, filter }: { url: string; caption: string; filter: string }) => (
   <div className="border bg-gray-200 aspect-7/8 rounded p-2">

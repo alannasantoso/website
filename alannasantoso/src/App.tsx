@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import Home from './pages/Home'
-import About from './pages/About'
-import Photos from './pages/Photos'
-import Projects from './pages/Projects'
-import Links from './pages/Links'
-import Photobooth from './pages/Photobooth'
-import TakePhoto from './pages/TakePhoto'
+import Home from './pages/Home.js'
+import About from './pages/About.js'
+import Photos from './pages/Photos.js'
+import Projects from './pages/Projects.js'
+import Links from './pages/Links.js'
+import Photobooth from './pages/Photobooth.js'
+import TakePhoto from './pages/TakePhoto.js'
 import './main.css'
 
 export default function App() {
