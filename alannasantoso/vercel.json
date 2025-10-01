@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",
+      "src": "api/*.mjs",
       "use": "@vercel/node"
     },
     {
@@ -15,12 +15,8 @@
   ],
   "routes": [
     {
-      "src": "/api/photos",
-      "dest": "/api/photos.js"
-    },
-    {
       "src": "/api/(.*)",
-      "dest": "/api/$1.js"
+      "dest": "/api/$1.mjs"
     },
     {
       "handle": "filesystem"
