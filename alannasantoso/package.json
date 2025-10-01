@@ -11,15 +11,21 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
+    "axios": "^1.12.2",
+    "cloudinary": "^2.7.0",
+    "express": "^5.1.0",
     "framer-motion": "^12.23.12",
+    "mongoose": "^8.18.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.8.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@types/node": "^24.6.1",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
+    "@vercel/node": "^5.3.24",
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.33.0",
