@@ -6,6 +6,7 @@ import Photos from './pages/Photos'
 import Projects from './pages/Projects'
 import Links from './pages/Links'
 import Photobooth from './pages/Photobooth'
+import TakePhoto from './pages/TakePhoto'
 import './main.css'
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/links" element={<Links />}/>
             <Route path="/photobooth" element={<Photobooth />}/>
+            <Route path="/photobooth/take-photo" element={<TakePhoto />} />
           </Routes>
         </div>
       </div>
