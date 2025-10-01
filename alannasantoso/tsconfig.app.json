@@ -6,7 +6,6 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,               // Vite handles building
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
