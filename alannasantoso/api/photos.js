@@ -1,7 +1,5 @@
-// /src/api/photos.ts
-/// <reference types="node" />
+// api/photos.js
 
-import type { VercelRequest, VercelResponse } from "@vercel/node";
 import mongoose from "mongoose";
 import cloudinary from "../src/config/cloudinary.js";
 import Photo from "../src/models/Photo.js";
@@ -9,10 +7,10 @@ import Photo from "../src/models/Photo.js";
 // --------------------
 // MongoDB connection (cached for serverless)
 // --------------------
-let cached = (global as any).mongoose;
+let cached = global.mongoose;
 
 if (!cached) {
-  cached = (global as any).mongoose = { conn: null, promise: null };
+  cached = global.mongoose = { conn: null, promise: null };
 }
 
 async function connectToDB() {
@@ -36,7 +34,7 @@ async function connectToDB() {
 // --------------------
 // API Route Handler
 // --------------------
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req, res) {
   try {
     await connectToDB();
   } catch (err) {
@@ -44,7 +42,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: "Database connection failed" });
   }
 
-  // Handle POST (upload photo)
+  // POST - upload a photo
   if (req.method === "POST") {
     try {
       const { image, caption, filter } = req.body;
@@ -72,7 +70,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
   }
 
-  // Handle GET (fetch photos)
+  // GET - fetch photos
   if (req.method === "GET") {
     try {
       const photos = await Photo.find().sort({ createdAt: -1 }).lean();
