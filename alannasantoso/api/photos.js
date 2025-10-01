@@ -1,87 +1,58 @@
-// api/photos.js
-
 import mongoose from "mongoose";
-import cloudinary from "../src/config/cloudinary.js";
-import Photo from "../src/models/Photo.js";
+import { v2 as cloudinary } from "cloudinary";
+import Photo from "../src/models/Photo.js"; // adjust path if needed
 
-// --------------------
-// MongoDB connection (cached for serverless)
-// --------------------
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  secure: true,
+});
+
 let cached = global.mongoose;
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
-
 async function connectToDB() {
-  if (cached.conn) return cached.conn;
-
-  if (!cached.promise) {
-    if (!process.env.MONGO_URI) {
-      throw new Error("❌ MONGO_URI is not defined in environment variables.");
-    }
-
-    cached.promise = mongoose.connect(process.env.MONGO_URI).then((m) => {
-      console.log("✅ Connected to MongoDB");
-      return m.connection;
-    });
+  if (cached?.conn) return cached.conn;
+  if (!cached?.promise) {
+    if (!process.env.MONGO_URI) throw new Error("MONGO_URI not defined");
+    cached.promise = mongoose.connect(process.env.MONGO_URI).then(m => m.connection);
   }
-
   cached.conn = await cached.promise;
   return cached.conn;
 }
 
-// --------------------
-// API Route Handler
-// --------------------
 export default async function handler(req, res) {
   try {
     await connectToDB();
   } catch (err) {
-    console.error("❌ MongoDB connection failed:", err);
+    console.error("MongoDB connection failed:", err);
     return res.status(500).json({ error: "Database connection failed" });
   }
 
-  // POST - upload a photo
   if (req.method === "POST") {
     try {
       const { image, caption, filter } = req.body;
+      if (!image) return res.status(400).json({ error: "Image is required" });
 
-      if (!image) {
-        return res.status(400).json({ error: "Image is required" });
-      }
-
-      // Upload image to Cloudinary
-      const upload = await cloudinary.uploader.upload(image, {
-        folder: "photobooth",
-      });
-
-      // Save metadata in MongoDB
-      const photo = await Photo.create({
-        url: upload.secure_url,
-        caption,
-        filter,
-      });
-
+      const upload = await cloudinary.uploader.upload(image, { folder: "photobooth" });
+      const photo = await Photo.create({ url: upload.secure_url, caption, filter });
       return res.status(200).json(photo);
     } catch (err) {
-      console.error("❌ Upload failed:", err);
+      console.error("Upload failed:", err);
       return res.status(500).json({ error: "Failed to upload photo" });
     }
   }
 
-  // GET - fetch photos
   if (req.method === "GET") {
     try {
       const photos = await Photo.find().sort({ createdAt: -1 }).lean();
       return res.status(200).json(photos);
     } catch (err) {
-      console.error("❌ Fetch failed:", err);
+      console.error("Fetch failed:", err);
       return res.status(500).json({ error: "Failed to fetch photos" });
     }
   }
 
-  // Unsupported method
   res.setHeader("Allow", ["GET", "POST"]);
   return res.status(405).end(`Method ${req.method} Not Allowed`);
 }
