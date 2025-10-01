@@ -1,2 +1,16 @@
-{"projectId":"prj_RQHOHliKSmlygQq91Ad6TArY0l7I","orgId":"team_1bIRDqMzN0ri9K3GvNf8dTxv","projectName":"website"}
-
+{
+  "projectId": "prj_RQHOHliKSmlygQq91Ad6TArY0l7I",
+  "orgId": "team_1bIRDqMzN0ri9K3GvNf8dTxv",
+  "projectName": "website",
+  "settings": {
+    "createdAt": 1759285909868,
+    "framework": null,
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "22.x"
+  }
+}
