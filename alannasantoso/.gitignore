@@ -9,6 +9,9 @@ lerna-debug.log*
 
 node_modules
 dist
+!public/dress-up-secret/dist/
+!public/dress-up-secret/dist/App.js
+!public/dress-up-secret/dist/index.js
 dist-ssr
 *.local
 
