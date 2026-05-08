@@ -9,6 +9,11 @@ import Photobooth from './pages/Photobooth.js'
 import TakePhoto from './pages/TakePhoto.js'
 import './main.css'
 
+function DressUpSecretRedirect() {
+  window.location.replace('/dress-up-secret/index.html')
+  return null
+}
+
 export default function App() {
   return (
     <Router>
@@ -22,6 +27,7 @@ export default function App() {
             <Route path="/links" element={<Links />}/>
             <Route path="/photobooth" element={<Photobooth />}/>
             <Route path="/photobooth/take-photo" element={<TakePhoto />} />
+            <Route path="/dress-up-secret" element={<DressUpSecretRedirect />} />
           </Routes>
         </div>
       </div>
