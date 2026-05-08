@@ -10,7 +10,7 @@ import TakePhoto from './pages/TakePhoto.js'
 import './main.css'
 
 function DressUpSecretRedirect() {
-  window.location.replace('/dress-up-secret/index.html')
+  window.location.replace('/dress-up-secret/')
   return null
 }
 

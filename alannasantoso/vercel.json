@@ -19,6 +19,14 @@
       "dest": "/api/$1.mjs"
     },
     {
+      "src": "/dress-up-secret/?",
+      "dest": "/dress-up-secret/index.html"
+    },
+    {
+      "src": "/dress-up-secret/(.*)",
+      "dest": "/dress-up-secret/$1"
+    },
+    {
       "handle": "filesystem"
     },
     {
