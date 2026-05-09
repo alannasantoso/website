@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "alannasantoso/api/*.mjs",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "alannasantoso/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/alannasantoso/api/$1.mjs"
+    },
+    {
+      "src": "/dress-up-secret/?",
+      "dest": "/dress-up-secret/index.html"
+    },
+    {
+      "src": "/dress-up-secret/(.*)",
+      "dest": "/dress-up-secret/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
