@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix alannasantoso ci && npm --prefix alannasantoso run build"
+  }
+}

@@ -1,22 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "alannasantoso/api/*.mjs",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "alannasantoso/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "alannasantoso/dist",
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/alannasantoso/api/$1.mjs"
+      "dest": "/api/$1.mjs"
     },
     {
       "src": "/dress-up-secret/?",
